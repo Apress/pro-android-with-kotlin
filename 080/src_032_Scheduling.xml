@@ -1,0 +1,4 @@
+<service android:name=".MyJob"
+         android:label="MyJob Service"
+         android:permission=
+               "android.permission.BIND_JOB_SERVICE" />

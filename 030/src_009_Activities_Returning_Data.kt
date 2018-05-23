@@ -1,0 +1,5 @@
+val intent = Intent()
+intent.putExtra(...)
+intent.putExtra(...)
+setResult(Activity.RESULT_OK, intent)
+finish()

@@ -1,0 +1,1 @@
+val conf = resources.configuration

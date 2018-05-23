@@ -1,0 +1,4 @@
+<manifest ... >
+  <application android:theme="@style/MyTheme" ... >
+  </application>
+</manifest>

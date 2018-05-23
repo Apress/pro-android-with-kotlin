@@ -1,0 +1,5 @@
+val size = Point()
+windowManager.defaultDisplay.getSize(size)
+// or (getSystemService(Context.WINDOW_SERVICE)
+//    as WindowManager).defaultDisplay.getSize(size)
+val (width,height) = Pair(size.x, size.y)

@@ -1,0 +1,21 @@
+<activity android:name=
+      "android.support.wearable. §$\neg$§
+      complications. §$\neg$§
+      ComplicationHelperActivity"/>
+<activity
+    android:name=
+      ".ComplicationConfigActivity"
+      android:label="@string/app_name">
+    <intent-filter>
+      <action android:name=
+          "com.example.xyz88. §$\neg$§
+          CONFIG_COMPLICATION"/>
+      <category android:name=
+          "com.google.android. §$\neg$§
+          wearable.watchface.category. §$\neg$§
+          WEARABLE_CONFIGURATION"/>
+      <category android:name=
+          "android.intent.category. §$\neg$§
+          DEFAULT"/>
+    </intent-filter>
+</activity>

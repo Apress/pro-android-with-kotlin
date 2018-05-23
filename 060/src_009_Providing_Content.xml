@@ -1,0 +1,10 @@
+<intent-filter>
+    <action android:name=
+          "de.pspaeth.crcons.VIEW"/>
+    <category android:name=
+          "android.intent.category.DEFAULT"/>
+    <data android:mimeType="*/*" 
+          android:scheme="content" 
+          android:host="*" 
+          android:pathPattern=".*"/>
+</intent-filter>

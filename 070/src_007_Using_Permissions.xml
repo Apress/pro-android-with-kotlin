@@ -1,0 +1,6 @@
+...
+<activity android:name=
+        "com.example.myapp.ExampleActivity" 
+    android:permission=
+        "com.eample.myapp.abcPermission"/>
+...

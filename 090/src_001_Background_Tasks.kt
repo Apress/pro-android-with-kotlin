@@ -1,0 +1,3 @@
+val t = Thread{ ->
+    // do background work...
+}.also { it.start() }

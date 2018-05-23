@@ -1,0 +1,6 @@
+<fragment android:name=
+      "com.example.android.fragments.TheFragment"
+    android:id="@+id/fragment_id1"
+    android:layout_weight="..."
+    android:layout_width="..."
+    android:layout_height="..." />

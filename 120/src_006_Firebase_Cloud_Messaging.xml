@@ -1,0 +1,9 @@
+<service
+  android:name=".MyFirebaseInstanceIdService"
+  android:enabled="true"
+  android:exported="true">
+    <intent-filter>
+      <action android:name=
+          "com.google.firebase.INSTANCE_ID_EVENT"/>
+    </intent-filter>
+</service>

@@ -1,0 +1,9 @@
+<application ...>
+    <activity ...>...</activity>
+    <activity-alias ...>...</activity-alias>
+    <meta-data ...>...</meta-data>
+    <service ...>...</service>
+    <receiver ...>...</receiver>
+    <provider ...>...</provider>
+    <uses-library ...>...</uses-library>
+</application>

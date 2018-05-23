@@ -1,0 +1,4 @@
+<uses-feature
+      android:name="string"
+      android:required=["true" | "false"]
+      android:glEsVersion="integer" />

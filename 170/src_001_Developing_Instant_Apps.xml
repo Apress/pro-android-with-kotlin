@@ -1,0 +1,6 @@
+<data
+    android:host="myfirstinstantapp.your server.com"
+    android:pathPattern="/instapp"
+    android:scheme="https"/>
+<data
+    android:scheme="http"/>

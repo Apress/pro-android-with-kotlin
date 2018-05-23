@@ -1,0 +1,4 @@
+<include
+    android:layout_width="fill_parent"
+    android:layout_height="250dp"
+    layout="@layout/activity_maps" />

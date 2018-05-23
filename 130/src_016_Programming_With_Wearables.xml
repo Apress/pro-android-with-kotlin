@@ -1,0 +1,35 @@
+  <service
+      android:name=".CustomComplicationProviderService"
+      android:icon="@drawable/ic_watch_white"
+      android:label="Service label"
+      android:permission="com.google.android.wearable. §$\neg$§
+            permission.BIND_COMPLICATION_PROVIDER">
+
+    <intent-filter>
+      <action android:name="android.support.wearable. §$\neg$§
+            complications. §$\neg$§
+            ACTION_COMPLICATION_UPDATE_REQUEST"/>
+    </intent-filter>
+
+    <meta-data
+          android:name="android.support.wearable.§$\neg$§
+                complications.SUPPORTED_TYPES"
+          android:value=
+                "SHORT_TEXT,LONG_TEXT,RANGED_VALUE"/>
+
+            <!--
+            UPDATE_PERIOD_SECONDS specifies how
+            often you want the system to check for updates
+            to the data. A zero value means you will 
+            instead manually trigger updates.
+
+            If not zero, set the interval in the order 
+            of minutes. The actual update may however
+            differ - the system might have its own idea.
+            -->
+            <meta-data
+                android:name="android.support.wearable.§$\neg$§
+                      complications.UPDATE_PERIOD_SECONDS"
+                android:value="0"/>
+
+        </service>

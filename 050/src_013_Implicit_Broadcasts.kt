@@ -1,0 +1,1 @@
+sendBroadcast(intent)

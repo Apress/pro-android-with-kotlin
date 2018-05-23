@@ -1,0 +1,3 @@
+<uses-library
+      android:name="string"
+      android:required=["true" | "false"] />

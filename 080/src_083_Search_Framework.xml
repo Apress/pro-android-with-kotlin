@@ -1,0 +1,6 @@
+<provider
+    android:name=".RecentsProvider"
+    android:authorities="com.example.RecentsProvider"
+    android:enabled="true"
+    android:exported="true">
+</provider>

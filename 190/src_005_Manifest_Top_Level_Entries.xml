@@ -1,0 +1,3 @@
+<permission-tree android:icon="drawable resource"
+                 android:label="string resource" ]
+                 android:name="string" />

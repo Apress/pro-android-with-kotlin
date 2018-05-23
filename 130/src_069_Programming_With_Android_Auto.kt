@@ -1,0 +1,2 @@
+unreadConvBuilder.addMessage(messageString)
+.setLatestTimestamp(currentTimestamp)

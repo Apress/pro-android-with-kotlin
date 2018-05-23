@@ -1,0 +1,4 @@
+<TextView ...
+  android:fontFamily="@font/myfont"
+  android:textStyle="normal"
+/>

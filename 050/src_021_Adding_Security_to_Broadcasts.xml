@@ -1,0 +1,7 @@
+<receiver android:name=".MyReceiver" 
+        android:permission="com.xyz.theapp.PERMISSION1">
+    <intent-filter>
+        <action android:name=
+                    "com.xyz.theapp.DO_STH" />
+    </intent-filter>
+</receiver>

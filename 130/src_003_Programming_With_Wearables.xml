@@ -1,0 +1,9 @@
+<android.support.wear.widget.
+      SwipeDismissFrameLayout ...>
+  <FrameLayout ...>
+    <fragment android:id="@+id/map" android:name=
+        "com.google.android.gms.maps.MapFragment"
+    ... />
+  </FrameLayout>
+</android.support.wear.widget.
+      SwipeDismissFrameLayout>

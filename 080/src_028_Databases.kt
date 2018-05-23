@@ -1,0 +1,3 @@
+val db = ...db.runInTransaction { ->
+    // do DB work...
+}

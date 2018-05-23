@@ -1,0 +1,3 @@
+<grant-uri-permission android:path="string" 
+    android:pathPattern="string"
+    android:pathPrefix="string" />

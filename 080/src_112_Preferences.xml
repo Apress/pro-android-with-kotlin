@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="listentries">
+      <item>List item 1</item>
+      <item>List item 2</item>
+      <item>List item 3</item>
+  </string-array>
+  <string-array name="listvalues">
+      <item>1</item>
+      <item>2</item>
+      <item>3</item>
+  </string-array>
+  <string-array name="multiselectdefaults">
+      <item>1</item>
+      <item>3</item>
+  </string-array>
+</resources>

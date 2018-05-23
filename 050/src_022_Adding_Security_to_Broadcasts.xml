@@ -1,0 +1,4 @@
+<manifest ...>
+    <permission android:name=
+          "com.xyz.theapp.PERMISSION1"/>
+    ...

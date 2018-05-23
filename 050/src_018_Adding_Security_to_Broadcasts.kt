@@ -1,0 +1,3 @@
+...val intent = Intent(this, MyReceiver::class.java)
+...sendBroadcast(intent, "com.xyz.theapp.PERMISSION1")
+...

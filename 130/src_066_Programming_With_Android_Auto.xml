@@ -1,0 +1,19 @@
+  <application>
+    ...
+    <receiver android:name=".MyMessageReadReceiver"
+            android:exported="false">
+        <intent-filter>
+          <action android:name=
+            "com.myapp.auto.MY_ACTION_MESSAGE_READ"/>
+        </intent-filter>
+    </receiver>
+
+    <receiver android:name=".MyMessageReplyReceiver"
+          android:exported="false">
+        <intent-filter>
+          <action android:name=
+            "com.myapp.auto.MY_ACTION_MESSAGE_REPLY"/>
+        </intent-filter>
+    </receiver>
+    ...
+  </application>

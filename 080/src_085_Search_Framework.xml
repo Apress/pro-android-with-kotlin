@@ -1,0 +1,4 @@
+content://your.authority/
+    optional.suggest.path/
+    SUGGEST_URI_PATH_QUERY/
+    <query>

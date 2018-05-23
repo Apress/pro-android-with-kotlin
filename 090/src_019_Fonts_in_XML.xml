@@ -1,0 +1,3 @@
+<TextView ...
+  android:fontFamily="@font/<FONT_NAME>"
+/>

@@ -1,0 +1,29 @@
+  <?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout
+    xmlns:android=
+          "http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.powermock.MainActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""/>
+    <Button
+        android:id="@+id/btnSave"
+        android:text="Save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="save"/>
+    <Button
+        android:id="@+id/btnCount"
+        android:text="Count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="count"/>
+  </LinearLayout>

@@ -1,0 +1,4 @@
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/recycler_view"
+    android:scrollbars="vertical"
+    ... />

@@ -1,0 +1,43 @@
+  Entry:
+    _id = 3
+    mimetype = vnd.android.cursor.item/phone_v2
+    raw_contact_id = 1
+    contact_id = 1
+    data1 = (012) 345-6789
+
+  Entry:
+    _id = 4
+    mimetype = vnd.android.cursor.item/phone_v2
+    raw_contact_id = 1
+    contact_id = 1
+    data1 = (098) 765-4321
+
+  Entry:
+    _id = 5
+    mimetype = vnd.android.cursor.item/email_v2
+    raw_contact_id = 1
+    contact_id = 1
+    data1 = null
+
+  Entry:
+    _id = 6
+    mimetype = vnd.android.cursor.item/name
+    raw_contact_id = 1
+    contact_id = 1
+    data3 = Mayer
+    data2 = Hugo
+    data1 = Hugo Mayer
+
+  Entry:
+    _id = 7
+    mimetype = vnd.android.cursor.item/nickname
+    raw_contact_id = 1
+    contact_id = 1
+    data1 = null
+
+  Entry:
+    _id = 8
+    mimetype = vnd.android.cursor.item/note
+    raw_contact_id = 1
+    contact_id = 1
+    data1 = null

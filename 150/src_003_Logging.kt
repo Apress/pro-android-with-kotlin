@@ -1,0 +1,1 @@
+val ENABLED = BuildConfig.LOG

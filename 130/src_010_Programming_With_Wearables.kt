@@ -1,0 +1,1 @@
+compl.updateComplicationBounds(width, height)

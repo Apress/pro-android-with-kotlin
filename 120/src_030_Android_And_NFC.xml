@@ -1,0 +1,3 @@
+val rawMessages : Parcelable[] = 
+    intent.getParcelableArrayExtra( 
+    NfcAdapter.EXTRA_NDEF_MESSAGES)

@@ -1,0 +1,2 @@
+<uses-permission-sdk-23 android:name="string"
+        android:maxSdkVersion="integer" />

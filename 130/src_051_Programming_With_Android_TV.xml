@@ -1,0 +1,3 @@
+<service
+    android:name=".UpdateRecommendationsService"
+    android:enabled="true" />

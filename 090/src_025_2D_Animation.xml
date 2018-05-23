@@ -1,0 +1,5 @@
+img.setBackgroundResource(R.drawable.anim1)
+img.setOnClickListener{
+    val anim = img.background as AnimationDrawable
+    anim.start()
+}

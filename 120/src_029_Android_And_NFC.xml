@@ -1,0 +1,5 @@
+<intent-filter>
+  <action android:name=
+        "android.nfc.action.TAG_DISCOVERED"/>
+  ...more filter specs...
+</intent-filter>

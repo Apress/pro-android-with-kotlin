@@ -1,0 +1,1 @@
+freeSinceapi21Compile ':mylib'

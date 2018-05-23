@@ -1,0 +1,6 @@
+val t = Thread{ ->
+    // do background work...
+    runOnUiThread {
+        // use the UI...
+    }
+}.also { it.start() }

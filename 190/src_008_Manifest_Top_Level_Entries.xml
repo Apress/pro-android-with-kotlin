@@ -1,0 +1,9 @@
+<uses-configuration
+    android:reqFiveWayNav=["true" | "false"]
+    android:reqHardKeyboard=["true" | "false"]
+    android:reqKeyboardType=["undefined" | "nokeys" | 
+                           "qwerty" | "twelvekey"]
+    android:reqNavigation=["undefined" | "nonav" | 
+                           "dpad" | "trackball" | "wheel"]
+    android:reqTouchScreen=["undefined" | "notouch" | 
+                           "stylus" | "finger"] />

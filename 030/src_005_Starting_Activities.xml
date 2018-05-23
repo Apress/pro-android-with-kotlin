@@ -1,0 +1,9 @@
+<activity android:name=
+      "com.example.myapp.ExampleActivity">
+  <intent-filter>
+    <action android:name=
+        "com.example.myapp.ExampleActivity.START_ME" />
+    <category android:name=
+        "android.intent.category.DEFAULT"/>
+  </intent-filter>
+</activity>

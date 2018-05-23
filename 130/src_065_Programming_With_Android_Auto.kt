@@ -1,0 +1,1 @@
+mSession.setFlags( MediaSession.FLAG_HANDLES_MEDIA_BUTTONS or MediaSession.FLAG_HANDLES_TRANSPORT_CONTROLS)

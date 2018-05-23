@@ -1,0 +1,8 @@
+<compatible-screens>
+  <screen android:screenSize=
+        ["small" | "normal" | "large" | "xlarge"]
+     android:screenDensity=
+        ["ldpi" | "mdpi" | "hdpi" | "xhdpi" | "280" | 
+         "360" | "420" | "480" | "560" ] />
+   <screen ...
+</compatible-screens>

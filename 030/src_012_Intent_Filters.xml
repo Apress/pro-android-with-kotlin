@@ -1,0 +1,5 @@
+<intent-filter android:icon="drawable resource"
+             android:label="string resource"
+             android:priority="integer" >
+    ...
+</intent-filter>

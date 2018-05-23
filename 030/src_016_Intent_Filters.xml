@@ -1,0 +1,7 @@
+<data android:scheme="string"
+      android:host="string"
+      android:port="string"
+      android:path="string"
+      android:pathPattern="string"
+      android:pathPrefix="string"
+      android:mimeType="string" />

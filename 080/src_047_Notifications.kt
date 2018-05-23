@@ -1,0 +1,1 @@
+.setProgress(PROGRESS_MAX, PROGRESS_CURRENT, false)

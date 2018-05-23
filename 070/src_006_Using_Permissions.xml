@@ -1,0 +1,8 @@
+Caused by: java.lang.SecurityException: Permission 
+Denial: opening provider 
+com.android.providers.contacts.CallLogProvider 
+from 
+ProcessRecord{faeda9c 4127:de.pspaeth.cp1/u0a96} 
+(pid=4127, uid=10096) requires 
+android.permission.READ_CALL_LOG or 
+android.permission.WRITE_CALL_LOG

@@ -1,0 +1,8 @@
+<service
+    android:name=".MyService"
+    android:enabled="true"
+    android:exported="true">
+    <intent-filter>
+       <action android:name="<PCKG_NAME>.START_SERVICE" />
+    </intent-filter>
+</service>

@@ -1,0 +1,10 @@
+<application ...>
+  ...
+  <receiver android:name=".MyReceiver">
+    <intent-filter>
+      <action android:name=
+            "de.pspaeth.myapp.DO_STH">
+      </action>
+    </intent-filter>
+  </receiver>
+</application>

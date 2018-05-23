@@ -1,0 +1,6 @@
+<provider
+    android:name=".CustomProvider"
+    android:authorities="com.example.CustomProvider"
+    android:enabled="true"
+    android:exported="true">
+</provider>

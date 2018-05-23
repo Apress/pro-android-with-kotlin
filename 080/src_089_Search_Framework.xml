@@ -1,0 +1,6 @@
+query(): content://com.example.CustomProvider/
+        search_suggest_query/sp?limit=50
+  projection=null
+  selection=null
+  selectionArgs=null
+  sortOrder=null

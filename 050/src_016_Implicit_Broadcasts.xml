@@ -1,0 +1,18 @@
+  <application ...>
+    ...
+    <receiver android:name=".MyReceiver">
+      <intent-filter>
+        <action android:name=
+            "com.xyz.myapp.DO_STH" />
+        <category android:name=
+            "android.intent.category.DEFAULT"/>
+        <category android:name=
+            "com.xyz.myapp.MY_CATEG"/>
+        <data android:scheme="http"
+              android:port="80"
+              android:host="com.xyz"
+              android:path="items/7"
+              android:mimeType="text/html" />              
+      </intent-filter>
+    </receiver>
+</application>

@@ -1,0 +1,6 @@
+buildTypes {
+    release {
+        ...}
+    debug {
+        ...}
+}
