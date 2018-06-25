@@ -1,28 +1,36 @@
-override fun onReceive(context: Context, intent: Intent) {
-    Log.e("LOG", intent.toString())
+fun directReply(view:View) {
+    // Key for the string that's delivered in the
+    // action's intent.
     val KEY_TEXT_REPLY = "key_text_reply"
-    
-    val remoteInput = RemoteInput.getResultsFromIntent(intent)
-    val txt = remoteInput?.getCharSequence(KEY_TEXT_REPLY)?:"undefined"
-    val conversationId = intent.getIntExtra("conversationId",0)
-    Log.e("LOG","reply text = " + txt)
-    
-    
-    // Do s.th. with the reply...
-    
-    
-    // Build a new notification, which informs the user
-    // that the system handled their interaction with
-    // the previous notification.
-    val NOTIFICATION_CHANNEL_ID = "1"
-    val repliedNotification = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
-    .setSmallIcon(android.R.drawable.ic_media_play)
-    .setContentText("Replied")
+    val remoteInput = RemoteInput.Builder(KEY_TEXT_REPLY)
+    .setLabel("Reply label")
     .build()
+    
+    // Make sure this broadcast receiver exists
+    val CONVERSATION_ID = 1
+    val messageReplyIntent = Intent(this, MyReceiver2::class.java)
+    messageReplyIntent.action = "com.xyz2.MAIN"
+    messageReplyIntent.putExtra("conversationId", CONVERSATION_ID)
+    
+    // Build a PendingIntent for the reply
+    // action to trigger.
+    val replyPendingIntent = PendingIntent.getBroadcast(applicationContext, CONVERSATION_ID, messageReplyIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+    
+    // Create the reply action and add the remote input.
+    val action = NotificationCompat.Action.Builder( ... a resource id for an icon ..., "Reply", replyPendingIntent)
+    .addRemoteInput(remoteInput)
+    .build()
+    
+    val builder = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
+    .setSmallIcon(... a resource id for an icon ...)
+    .setContentTitle("Title")
+    .setContentText("Content Content Content ...")
+    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+    // add a reply action button
+    .addAction(action)
     
     buildChannel(NOTIFICATION_CHANNEL_ID)
     
-    // Issue the new notification.
-    val notificationManager = NotificationManagerCompat.from(context)
-    notificationManager.notify(conversationId, repliedNotification)
+    val notificationManager = NotificationManagerCompat.from(this)
+    notificationManager.notify( NOTIFICATION_ID, builder.build())
 }

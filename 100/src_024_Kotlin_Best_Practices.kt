@@ -1,1 +1,1 @@
-data class Person( val fName:String="", val lName:String, val age:Int=0)
+val p = person(age = 27, lName = "Smith")

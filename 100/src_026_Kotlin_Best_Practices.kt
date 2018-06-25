@@ -1,1 +1,6 @@
-val pers = Person(fName="John", lName="Smith", age=37)
+val person = Person().apply {
+    lastName = "Smith"
+    firstName = "John"
+    birthDay = "2011-01-23"
+}
+val company = Company("ACME")

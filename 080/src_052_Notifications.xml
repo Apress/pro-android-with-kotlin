@@ -1,0 +1,10 @@
+<activity
+    android:name=".MainActivity"
+    ... >
+</activity>
+<!-- MainActivity is the parent for ResultActivity -->
+<activity
+    android:name=".ResultActivity"
+    android:parentActivityName=".MainActivity" />
+    ...
+</activity>

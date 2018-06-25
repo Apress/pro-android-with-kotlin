@@ -1,1 +1,1 @@
-var name:String? = null
+fun TheClass.newFun(...){ ... }

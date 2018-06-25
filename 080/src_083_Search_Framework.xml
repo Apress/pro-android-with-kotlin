@@ -1,6 +1,10 @@
-<provider
-    android:name=".RecentsProvider"
-    android:authorities="com.example.RecentsProvider"
-    android:enabled="true"
-    android:exported="true">
-</provider>
+<?xml version="1.0" encoding="utf-8"?>
+<searchable xmlns:android=
+        "http://schemas.android.com/apk/res/android"
+     android:label="@string/app_label"
+     android:hint="@string/search_hint"
+     android:searchSuggestAuthority=
+         "com.example.RecentsProvider"
+     android:searchSuggestSelection=
+         " ?">
+</searchable>

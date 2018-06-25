@@ -1,5 +1,5 @@
-val person = Person()
-person.lastName = "Smith"
-person.firstName = "John"
-person.birthDay = "2011-01-23"
-val company = Company("ACME")
+package com.example.app.util
+
+val PI_SQUARED = Math.PI * Math.PI
+
+fun logObj(o:Any?) = o?.let { "(" + o::class.toString() + ") " + o.toString() } ?: "<null>"

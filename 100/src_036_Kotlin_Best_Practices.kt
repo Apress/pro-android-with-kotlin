@@ -1,3 +1,2 @@
-val i1 = 7
-val i2 = 8
-val s = "The sum is: ${i1+i2}"
+val m = mapOf( 1 to "John", 2 to "Greg", ... )
+for( (k,v) in m) { ... }

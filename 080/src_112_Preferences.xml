@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-  <string-array name="listentries">
-      <item>List item 1</item>
-      <item>List item 2</item>
-      <item>List item 3</item>
-  </string-array>
-  <string-array name="listvalues">
-      <item>1</item>
-      <item>2</item>
-      <item>3</item>
-  </string-array>
-  <string-array name="multiselectdefaults">
-      <item>1</item>
-      <item>3</item>
-  </string-array>
-</resources>
+<PreferenceScreen xmlns:android=
+      "http://schemas.android.com/apk/res/android">
+  <CheckBoxPreference
+      android:key="pref_key_auto_delete"
+      android:summary="Auto delete"
+      android:title="Auto delete"
+      android:defaultValue="false" />
+  <EditTextPreference
+      android:key="pref_key_delete_limit"
+      android:dependency="pref_key_auto_delete"
+      android:summary="Delete Limit"
+      android:title="Delete Limit"
+      android:defaultValue="10" />
+  <ListPreference
+      android:key="pref_key_list"
+      android:summary="A List"
+      android:title="A List"
+      android:entries="@array/listentries"
+      android:entryValues="@array/listvalues"
+      android:defaultValue="1" />
+  <MultiSelectListPreference
+      android:key="pref_key_mslist"
+      android:summary="A Multiselect List"
+      android:title="A Multiselect List"
+      android:entries="@array/listentries"
+      android:entryValues="@array/listvalues"
+      android:defaultValue="@array/multiselectdefaults"/>
+  <SwitchPreference
+      android:key="pref_key_switch"
+      android:summary="A Switch"
+      android:title="A Switch"
+      android:defaultValue="false" />
+  <RingtonePreference
+      android:key="pref_key_ringtone"
+      android:summary="A Ringtone"
+      android:title="A ringtone"
+      />
+</PreferenceScreen>

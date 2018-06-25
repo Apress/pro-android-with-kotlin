@@ -1,12 +1,12 @@
-class Plane(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int, val context: Context) {
+class Plane(val program: Int?, val vertBuf:Int, val idxBuf:Int, val context: Context) {
     
     val vertexBuffer: FloatBuffer
     val drawListBuffer: ShortBuffer
     
     // Used to pass in the texture.
-    var mTextureUniformHandle: Int = 0
+    var textureUniformHandle: Int = 0
     // A handle to our texture data
-    var mTextureDataHandle: Int = 0
+    var textureDataHandle: Int = 0
     
     companion object {
         val BYTES_PER_FLOAT = 4
@@ -54,19 +54,19 @@ class Plane(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int, val context: Co
         }
         
         // Load the texture
-        mTextureDataHandle = MyGLRenderer.loadTexture(context, R.drawable.myImage)
+        textureDataHandle = MyGLRenderer.loadTexture(context, R.drawable.myImage)
     }
     
     fun draw() {
         // Add program to OpenGL ES environment
-        GLES20.glUseProgram(mProgram!!)
+        GLES20.glUseProgram(program!!)
         
         // get handle to vertex shader's vPosition member
-        val mPositionHandle = GLES20.glGetAttribLocation(mProgram, "vPosition")
+        val positionHandle = GLES20.glGetAttribLocation(program, "vPosition")
         // Enable a handle to the vertices
-        GLES20.glEnableVertexAttribArray(mPositionHandle)
+        GLES20.glEnableVertexAttribArray(positionHandle)
         // Prepare the coordinate data
-        GLES20.glVertexAttribPointer(mPositionHandle, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, vertexBuffer)
+        GLES20.glVertexAttribPointer(positionHandle, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, vertexBuffer)
         
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         // Buffer offsets are a little bit strange in the
@@ -80,12 +80,12 @@ class Plane(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int, val context: Co
         // create a new view
         vertexBuffer.rewind()
         // ... and rewind the original buffer
-        val mNormHandle = GLES20.glGetAttribLocation(mProgram, "vNorm")
-        if(mNormHandle >= 0) {
+        val normHandle = GLES20.glGetAttribLocation(program, "vNorm")
+        if(normHandle >= 0) {
             // Enable a handle to the vertices
-            GLES20.glEnableVertexAttribArray(mNormHandle)
+            GLES20.glEnableVertexAttribArray(normHandle)
             // Prepare the coordinate data
-            GLES20.glVertexAttribPointer(mNormHandle, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, normBuffer)
+            GLES20.glVertexAttribPointer(normHandle, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, normBuffer)
         }
         
         // get handle to vertex shader's textureCoords
@@ -94,12 +94,12 @@ class Plane(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int, val context: Co
         // create a new view
         vertexBuffer.rewind()
         // ... and rewind the original buffer
-        val mTextureHandle = GLES20.glGetAttribLocation(mProgram, "vTexture")
-        if(mTextureHandle >= 0) {
+        val textureHandle = GLES20.glGetAttribLocation(program, "vTexture")
+        if(textureHandle >= 0) {
             // Enable a handle to the texture coords
-            GLES20.glEnableVertexAttribArray( mTextureHandle)
+            GLES20.glEnableVertexAttribArray( textureHandle)
             // Prepare the coordinate data
-            GLES20.glVertexAttribPointer(mTextureHandle, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, textureBuffer)
+            GLES20.glVertexAttribPointer(textureHandle, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, textureBuffer)
         }
         
         // get handle to vertex shader's vColor member
@@ -108,23 +108,23 @@ class Plane(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int, val context: Co
         // create a new view
         vertexBuffer.rewind()
         // ... and rewind the original buffer
-        val mColorHandle = GLES20.glGetAttribLocation(mProgram, "vColor")
-        if(mColorHandle >= 0) {
+        val colorHandle = GLES20.glGetAttribLocation(program, "vColor")
+        if(colorHandle >= 0) {
             // Enable a handle to the vertices
-            GLES20.glEnableVertexAttribArray(mColorHandle)
+            GLES20.glEnableVertexAttribArray(colorHandle)
             // Prepare the coordinate data
-            GLES20.glVertexAttribPointer(mColorHandle, COLORS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, colorBuffer)
+            GLES20.glVertexAttribPointer(colorHandle, COLORS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, colorBuffer)
         }
         
-        mTextureUniformHandle = GLES20.glGetUniformLocation(mProgram, "texture")
-        if(mTextureHandle >= 0) {
+        textureUniformHandle = GLES20.glGetUniformLocation(program, "texture")
+        if(textureHandle >= 0) {
             // Set the active texture unit to
             // texture unit 0.
             GLES20.glActiveTexture(GLES20.GL_TEXTURE0)
             // Tell the texture uniform sampler to use
             // this texture in the shader by binding to
             // texture unit 0.
-            GLES20.glUniform1i(mTextureUniformHandle, 0)
+            GLES20.glUniform1i(textureUniformHandle, 0)
         }
         
         // Draw the plane
@@ -136,12 +136,12 @@ class Plane(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int, val context: Co
         GLES20.glBindBuffer( GLES20.GL_ELEMENT_ARRAY_BUFFER, 0)
         
         // Disable vertex array
-        GLES20.glDisableVertexAttribArray( mPositionHandle)
-        if(mNormHandle >= 0)
-        GLES20.glDisableVertexAttribArray( mNormHandle)
-        if(mTextureHandle >= 0)
-        GLES20.glDisableVertexAttribArray( mTextureHandle)
-        if(mColorHandle >= 0)
-        GLES20.glDisableVertexAttribArray( mColorHandle)
+        GLES20.glDisableVertexAttribArray( positionHandle)
+        if(normHandle >= 0)
+        GLES20.glDisableVertexAttribArray( normHandle)
+        if(textureHandle >= 0)
+        GLES20.glDisableVertexAttribArray( textureHandle)
+        if(colorHandle >= 0)
+        GLES20.glDisableVertexAttribArray( colorHandle)
     }
 }

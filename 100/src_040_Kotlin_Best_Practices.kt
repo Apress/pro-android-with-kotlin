@@ -1,2 +1,3 @@
-val pi = PrinterImpl(7)
-Derived(pi).print()
+val s = """
+First line
+Second Line""".trimIndent()

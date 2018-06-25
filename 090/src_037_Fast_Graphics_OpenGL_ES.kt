@@ -5,7 +5,7 @@ import android.util.Log
 import javax.microedition.khronos.egl.EGL10
 
 class MyGLSurfaceView(context: Context) : GLSurfaceView(context) {
-    val mRenderer: MyGLRenderer
+    val renderer: MyGLRenderer
     var supports3x = false
     var minVers = 0
     
@@ -20,8 +20,8 @@ class MyGLSurfaceView(context: Context) : GLSurfaceView(context) {
         setEGLContextFactory()
         
         // We set the renderer for drawing the graphics
-        mRenderer = MyGLRenderer()
-        setRenderer(mRenderer)
+        renderer = MyGLRenderer()
+        setRenderer(renderer)
         
         // This setting prevents the GLSurfaceView frame
         // from being redrawn until you call

@@ -19,15 +19,15 @@ class Quad {
     """.trimIndent()
     
     // The shader program
-    var mProgram:Int? = 0
+    var program:Int? = 0
     
     var color = floatArrayOf(0.94f, 0.67f, 0.22f, 1.0f)
     
     val vbo = IntArray(1) // one vertex buffer
     val ibo = IntArray(1) // one index buffer
     
-    var mPositionHandle: Int? = 0
-    var mColorHandle: Int? = 0
+    var positionHandle: Int? = 0
+    var colorHandle: Int? = 0
     
     companion object {
         val BYTES_PER_FLOAT = 4
@@ -47,7 +47,7 @@ class Quad {
         val vertexShader = MyGLRenderer.loadShader( GLES20.GL_VERTEX_SHADER, vertexShaderCode)
         val fragmentShader = MyGLRenderer.loadShader( GLES20.GL_FRAGMENT_SHADER, fragmentShaderCode)
         
-        mProgram = GLES20.glCreateProgram().apply {
+        program = GLES20.glCreateProgram().apply {
             // add the vertex shader to program
             GLES20.glAttachShader(this, vertexShader)
             
@@ -92,21 +92,21 @@ class Quad {
     
     fun draw() {
         // Add program to OpenGL ES environment
-        GLES20.glUseProgram(mProgram!!)
+        GLES20.glUseProgram(program!!)
         
         // Get handle to fragment shader's vColor member
-        mColorHandle = GLES20.glGetUniformLocation( mProgram!!, "vColor")
+        colorHandle = GLES20.glGetUniformLocation( program!!, "vColor")
         // Set color for drawing the quad
-        GLES20.glUniform4fv(mColorHandle!!, 1, color, 0)
+        GLES20.glUniform4fv(colorHandle!!, 1, color, 0)
         
         // Get handle to vertex shader's vPosition member
-        mPositionHandle = GLES20.glGetAttribLocation( mProgram!!, "vPosition")
+        positionHandle = GLES20.glGetAttribLocation( program!!, "vPosition")
         
         // Enable a handle to the vertices
-        GLES20.glEnableVertexAttribArray( mPositionHandle!!)
+        GLES20.glEnableVertexAttribArray( positionHandle!!)
         
         // Prepare the coordinate data
-        GLES20.glVertexAttribPointer(mPositionHandle!!, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, vertexBuffer)
+        GLES20.glVertexAttribPointer(positionHandle!!, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, vertexBuffer)
         
         // Draw the quad
         GLES20.glBindBuffer( GLES20.GL_ARRAY_BUFFER, vbo[0]);
@@ -119,6 +119,6 @@ class Quad {
         GLES20.glBindBuffer( GLES20.GL_ELEMENT_ARRAY_BUFFER, 0)
         
         // Disable vertex array
-        GLES20.glDisableVertexAttribArray( mPositionHandle!!)
+        GLES20.glDisableVertexAttribArray( positionHandle!!)
     }
 }

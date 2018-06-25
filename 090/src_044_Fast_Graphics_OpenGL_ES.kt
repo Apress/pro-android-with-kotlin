@@ -1,4 +1,4 @@
-class Cube(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int) {
+class Cube(val program: Int?, val vertBuf:Int, val idxBuf:Int) {
     val vertexBuffer: FloatBuffer
     val drawListBuffer: ShortBuffer
     
@@ -61,14 +61,14 @@ class Cube(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int) {
     
     fun draw() {
         // Add program to OpenGL ES environment
-        GLES20.glUseProgram(mProgram!!)
+        GLES20.glUseProgram(program!!)
         
         // get handle to vertex shader's vPosition member
-        val mPositionHandle = GLES20.glGetAttribLocation(mProgram, "vPosition")
+        val positionHandle = GLES20.glGetAttribLocation(program, "vPosition")
         // Enable a handle to the vertices
-        GLES20.glEnableVertexAttribArray(mPositionHandle)
+        GLES20.glEnableVertexAttribArray(positionHandle)
         // Prepare the coordinate data
-        GLES20.glVertexAttribPointer( mPositionHandle, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, vertexBuffer)
+        GLES20.glVertexAttribPointer( positionHandle, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, vertexBuffer)
         
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         // Buffer offsets are a little bit strange in the
@@ -83,12 +83,12 @@ class Cube(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int) {
         // create a new view
         vertexBuffer.rewind()
         // ... and rewind the original buffer
-        val mNormHandle = GLES20.glGetAttribLocation( mProgram, "vNorm")
-        if(mNormHandle >= 0) {
+        val normHandle = GLES20.glGetAttribLocation( program, "vNorm")
+        if(normHandle >= 0) {
             // Enable a handle to the vertices
-            GLES20.glEnableVertexAttribArray(mNormHandle)
+            GLES20.glEnableVertexAttribArray(normHandle)
             // Prepare the coordinate data
-            GLES20.glVertexAttribPointer(mNormHandle, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, normBuffer)
+            GLES20.glVertexAttribPointer(normHandle, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, normBuffer)
         }
         
         // get handle to vertex shader's vColor member
@@ -97,12 +97,12 @@ class Cube(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int) {
         // create a new view
         vertexBuffer.rewind()
         // ... and rewind the original buffer
-        val mColorHandle = GLES20.glGetAttribLocation( mProgram, "vColor")
-        if(mColorHandle >= 0) {
+        val colorHandle = GLES20.glGetAttribLocation( program, "vColor")
+        if(colorHandle >= 0) {
             // Enable a handle to the vertices
-            GLES20.glEnableVertexAttribArray(mColorHandle)
+            GLES20.glEnableVertexAttribArray(colorHandle)
             // Prepare the coordinate data
-            GLES20.glVertexAttribPointer(mColorHandle, COLORS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, colorBuffer)
+            GLES20.glVertexAttribPointer(colorHandle, COLORS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, colorBuffer)
         }
         
         // Draw the cube
@@ -114,10 +114,10 @@ class Cube(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int) {
         GLES20.glBindBuffer(GLES20.GL_ELEMENT_ARRAY_BUFFER, 0)
         
         // Disable attribute arrays
-        GLES20.glDisableVertexAttribArray(mPositionHandle)
-        if(mNormHandle >= 0)
-        GLES20.glDisableVertexAttribArray(mNormHandle)
-        if(mColorHandle >= 0)
-        GLES20.glDisableVertexAttribArray(mColorHandle)
+        GLES20.glDisableVertexAttribArray(positionHandle)
+        if(normHandle >= 0)
+        GLES20.glDisableVertexAttribArray(normHandle)
+        if(colorHandle >= 0)
+        GLES20.glDisableVertexAttribArray(colorHandle)
     }
 }

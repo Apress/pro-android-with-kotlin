@@ -1,6 +1,3 @@
-val person = Person().apply {
-    lastName = "Smith"
-    firstName = "John"
-    birthDay = "2011-01-23"
-}
-val company = Company("ACME")
+import com.example.app.util.*
+...val ps = PI_SQUARED
+logObj(ps)

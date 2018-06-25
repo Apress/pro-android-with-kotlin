@@ -1,6 +1,4 @@
-val groupId = "my_group"
-// The user-visible name of the group.
-val groupName = "Group Name"
-val notificationMngr = getSystemService(Context.NOTIFICATION_SERVICE)
-as NotificationManager
-notificationMngr.createNotificationChannelGroup( NotificationChannelGroup(groupId, groupName))
+val intent = Intent( Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS)
+intent.putExtra(Settings.EXTRA_APP_PACKAGE, getPackageName())
+intent.putExtra(Settings.EXTRA_CHANNEL_ID, myNotificationChannel.getId())
+startActivity(intent)

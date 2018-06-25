@@ -3,7 +3,7 @@ class MainActivity : AppCompatActivity() {
         val MY_DATA_CHECK_CODE = 42
     }
     
-    var mTts: TextToSpeech? = null
+    var tts: TextToSpeech? = null
     
     override
     fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     }
     
     fun go(view: View) {
-        mTts?.run {
+        tts?.run {
             language = Locale.US
             val myText1 = "Did you sleep well?"
             val myText2 = "It's time to wake up."
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == MY_DATA_CHECK_CODE) {
             if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
                 // success, create the TTS instance
-                mTts = TextToSpeech(this, { status ->
+                tts = TextToSpeech(this, { status ->
                     // do s.th. if you like
                 })
             } else {

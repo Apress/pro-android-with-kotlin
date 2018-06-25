@@ -1,3 +1,2 @@
-builder.setContentText("Download complete")
-.setProgress(0,0,false)
+builder.setProgress(PROGRESS_MAX, currentProgress, false)
 notificationManager.notify( NOTIFICATION_ID, builder.build())

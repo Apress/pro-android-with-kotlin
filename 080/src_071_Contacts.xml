@@ -1,0 +1,5 @@
+<QuickContactBadge
+          android:id="@+id/quickBadge"
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+          android:scaleType="centerCrop"/>

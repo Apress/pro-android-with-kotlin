@@ -1,3 +1,1 @@
-val s = """
-First line
-Second Line"""
+val pers = Person("John","Smith",37)

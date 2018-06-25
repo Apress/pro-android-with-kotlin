@@ -1,0 +1,14 @@
+  <activity android:name=".SearchableActivity" >
+    <!-- same as above -->
+  </activity>
+  <activity android:name=".MainActivity" 
+            android:label="Main">
+    <!-- ... -->
+
+    <!-- Enable the search dialog and let it send -->
+    <!-- the queries to SearchableActivity -->
+    <meta-data android:name=
+          "android.app.default_searchable"
+               android:value=
+          ".SearchableActivity" />
+  </activity>

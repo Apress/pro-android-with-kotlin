@@ -1,3 +1,1 @@
-val s = """
-First line
-Second Line""".trimIndent()
+val pers = Person(fName="John", lName="Smith", age=37)

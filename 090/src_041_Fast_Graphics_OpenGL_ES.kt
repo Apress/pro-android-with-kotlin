@@ -1,4 +1,4 @@
-class Square(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int) {
+class Square(val program: Int?, val vertBuf:Int, val idxBuf:Int) {
     val vertexBuffer: FloatBuffer
     val drawListBuffer: ShortBuffer
     
@@ -52,21 +52,21 @@ class Square(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int) {
     
     fun draw() {
         // Add program to OpenGL ES environment
-        GLES20.glUseProgram(mProgram!!)
+        GLES20.glUseProgram(program!!)
         
         // get handle to fragment shader's vColor member
-        val mColorHandle = GLES20.glGetUniformLocation( mProgram!!, "vColor")
+        val colorHandle = GLES20.glGetUniformLocation( program!!, "vColor")
         // Set color for drawing the square
-        GLES20.glUniform4fv(mColorHandle!!, 1, color, 0)
+        GLES20.glUniform4fv(colorHandle!!, 1, color, 0)
         
         // get handle to vertex shader's vPosition member
-        val mPositionHandle = GLES20.glGetAttribLocation( mProgram!!, "vPosition")
+        val positionHandle = GLES20.glGetAttribLocation( program!!, "vPosition")
         
         // Enable a handle to the vertices
-        GLES20.glEnableVertexAttribArray( mPositionHandle!!)
+        GLES20.glEnableVertexAttribArray( positionHandle!!)
         
         // Prepare the coordinate data
-        GLES20.glVertexAttribPointer(mPositionHandle!!, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, vertexBuffer)
+        GLES20.glVertexAttribPointer(positionHandle!!, COORDS_PER_VERTEX, GLES20.GL_FLOAT, false, VERTEX_STRIDE, vertexBuffer)
         
         // Draw the square
         GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, vertBuf)
@@ -77,6 +77,6 @@ class Square(val mProgram: Int?, val vertBuf:Int, val idxBuf:Int) {
         GLES20.glBindBuffer( GLES20.GL_ELEMENT_ARRAY_BUFFER, 0)
         
         // Disable vertex array
-        GLES20.glDisableVertexAttribArray( mPositionHandle!!)
+        GLES20.glDisableVertexAttribArray( positionHandle!!)
     }
 }

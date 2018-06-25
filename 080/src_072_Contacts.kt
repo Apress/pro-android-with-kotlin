@@ -1,4 +1,3 @@
-val contactUri = ContactsContract.Contacts.getLookupUri( id?.toLong()?:0, lookup)
-quickBadge.assignContactUri(contactUri)
-val thumbnail = loadContactPhotoThumbnail(photo.toString())
-quickBadge.setImageBitmap(thumbnail)
+val id = row[ContactsContract.Contacts._ID]
+val lookup = row[ContactsContract.Contacts.LOOKUP_KEY]
+val photo = row[ContactsContract.Contacts.PHOTO_THUMBNAIL_URI]

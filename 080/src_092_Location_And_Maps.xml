@@ -1,4 +1,4 @@
-<uses-permission android:name=
-    "android.permission.ACCESS_COARSE_LOCATION"/>
-<uses-permission android:name=
-    "android.permission.ACCESS_FINE_LOCATION"/>
+implementation 
+   'com.google.android.gms:play-services-location:11.8.0'
+implementation 
+   'com.google.android.gms:play-services-maps:11.8.0'

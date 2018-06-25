@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<searchable xmlns:android=
-      "http://schemas.android.com/apk/res/android"
-    android:label=
-      "@string/app_label"
-    android:hint=
-      "@string/search_hint"
-    android:searchSuggestAuthority=
-      "com.example.CustomProvider"
-    android:searchSuggestIntentAction=
-      "android.intent.action.VIEW">
-</searchable>
+content://your.authority/
+    optional.suggest.path/
+    SUGGEST_URI_PATH_QUERY/
+    <query>

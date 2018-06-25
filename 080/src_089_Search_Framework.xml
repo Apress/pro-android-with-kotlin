@@ -1,6 +1,6 @@
-query(): content://com.example.CustomProvider/
-        search_suggest_query/sp?limit=50
-  projection=null
-  selection=null
-  selectionArgs=null
-  sortOrder=null
+<provider
+    android:name=".CustomProvider"
+    android:authorities="com.example.CustomProvider"
+    android:enabled="true"
+    android:exported="true">
+</provider>

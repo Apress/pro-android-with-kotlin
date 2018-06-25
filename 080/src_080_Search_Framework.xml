@@ -1,0 +1,20 @@
+  <menu xmlns:android=
+      "http://schemas.android.com/apk/res/android"
+        xmlns:app=
+      "http://schemas.android.com/apk/res-auto">
+
+    <!-- Usually you have Settings in any menu -->
+    <item android:id="@+id/action_settings"
+          android:title="Settings"
+          app:showAsAction="never"/>
+
+    <item android:id="@+id/action_search"
+          android:title="Search"
+          app:showAsAction="ifRoom|collapseActionView"
+          app:actionViewClass=
+                "android.support.v7.widget.SearchView"
+        android:icon=
+                "@android:drawable/ic_menu_search"/>
+
+    <!-- more items ... ->
+  </menu>

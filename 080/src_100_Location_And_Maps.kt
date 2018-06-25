@@ -1,8 +1,5 @@
-val locationUpdates = object : LocationCallback() {
-    override fun onLocationResult(lr: LocationResult) {
-        Log.e("LOG", lr.toString())
-        Log.e("LOG", "Newest Location: " + lr.locations.last())
-        // do something with the new location...
-    }
+override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    if (requestCode and 0xFFFF == REQUEST_CHECK_STATE) {
+        Log.e("LOG", "Back from REQUEST_CHECK_STATE")
+        ...}
 }
-fusedLocationClient?.requestLocationUpdates(reqSetting, locationUpdates, null /* Looper */)

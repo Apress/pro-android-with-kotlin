@@ -1,2 +1,1 @@
-val i = 7
-val s = "And the value of 'i' is ${i}"
+val p:Person = ...val (fName,lName,age) = p

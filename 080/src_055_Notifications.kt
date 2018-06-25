@@ -1,17 +1,1 @@
-if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-    // Create the NotificationChannel, but only
-    // on API 26+ only after that it is needed
-    val channel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        NotificationChannel(channelId, "Channel Name", NotificationManager.IMPORTANCE_DEFAULT)
-    } else {
-        throw RuntimeException("Internal error")
-    }
-    channel.description = "Description"
-    // Register the channel with the system
-    val notificationManager = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        getSystemService( NotificationManager::class.java)
-    } else {
-        throw RuntimeException("Internal error")
-    }
-    notificationManager.createNotificationChannel(channel)
-}
+.setStyle(NotificationCompat.InboxStyle() .addLine("MasterOfTheUniverse   Go play PacMan") .addLine("Silvia Cheng          Party tonite") .setBigContentTitle("2 new messages") .setSummaryText("xyz@example.com"))

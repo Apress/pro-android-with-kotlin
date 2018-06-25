@@ -1,4 +1,5 @@
 var handlerThread : HandlerThread? = null
+// or: lateinit var handlerThread : HandlerThread
 ...fun doSomething() {
     handlerThread = handlerThread ?: HandlerThread("MyHandlerThread").apply {
         start()

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android=
+      "http://schemas.android.com/apk/res/android">
+  ...
+  <PreferenceScreen
+        android:title="Subscreen Title"
+        android:persistent="false">
+      <SwitchPreference
+          android:key="pref_key_switch"
+          android:summary="A Switch"
+          android:title="A Switch"
+          />
+      <RingtonePreference
+          android:key="pref_key_ringtone"
+          android:summary="A Ringtone"
+          android:title="A Ringtone"
+          />
+  </PreferenceScreen>
+  ...

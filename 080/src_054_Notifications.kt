@@ -1,1 +1,1 @@
-.setStyle(NotificationCompat.InboxStyle() .addLine("MasterOfTheUniverse   Go play PacMan") .addLine("Silvia Cheng          Party tonite") .setBigContentTitle("2 new messages") .setSummaryText("xyz@example.com"))
+.setGroup(GROUP_KEY)

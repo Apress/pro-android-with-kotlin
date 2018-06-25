@@ -1,4 +1,3 @@
-fun person(fName:String = "", lName:String = "", age:Int=0) {
-    val p = Person().apply { ... }
-    return p
-}
+val factEngine:  (acc:Int,i:Int) -> Int = { acc,i -> acc * i }
+fun fact(n:Int) = (1..n).fold(1, factEngine)
+System.out.println("10! = ${fact(10)}")

@@ -1,11 +1,4 @@
-  var fusedLocationClient: FusedLocationProviderClient? = 
-      null
-
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-
-    ...
-
-    fusedLocationClient = LocationServices.
-           getFusedLocationProviderClient(this) 
-  }
+<uses-permission android:name=
+    "android.permission.ACCESS_COARSE_LOCATION"/>
+<uses-permission android:name=
+    "android.permission.ACCESS_FINE_LOCATION"/>

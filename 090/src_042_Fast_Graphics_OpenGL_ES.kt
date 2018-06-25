@@ -35,14 +35,14 @@ class MyGLRenderer : GLSurfaceView.Renderer {
     
     var triangle:Triangle? = null
     var square:Square? = null
-    var mProgram:Int? = 0
+    var program:Int? = 0
     
     val vbo = IntArray(2) // vertex buffers
     val ibo = IntArray(2) // index buffers
     
-    val mVMatrix:FloatArray = FloatArray(16)
-    val mProjMatrix:FloatArray = FloatArray(16)
-    val mMVPMatrix:FloatArray = FloatArray(16)
+    val vMatrix:FloatArray = FloatArray(16)
+    val projMatrix:FloatArray = FloatArray(16)
+    val mvpMatrix:FloatArray = FloatArray(16)
     
     // Called once to set up the view's
     // OpenGL ES environment.
@@ -59,24 +59,24 @@ class MyGLRenderer : GLSurfaceView.Renderer {
         val fragmentShader = loadShader( GLES20.GL_FRAGMENT_SHADER, fragmentShaderCode)
         
         // create empty OpenGL ES Program
-        mProgram = GLES20.glCreateProgram()
+        program = GLES20.glCreateProgram()
         
         // add the vertex shader to program
-        GLES20.glAttachShader(mProgram!!, vertexShader)
+        GLES20.glAttachShader(program!!, vertexShader)
         
         // add the fragment shader to program
-        GLES20.glAttachShader(mProgram!!, fragmentShader)
+        GLES20.glAttachShader(program!!, fragmentShader)
         
         // creates OpenGL ES program executables
-        GLES20.glLinkProgram(mProgram!!)
+        GLES20.glLinkProgram(program!!)
         
         GLES20.glGenBuffers(2, vbo, 0) // just buffer names
         GLES20.glGenBuffers(2, ibo, 0)
         
         // Create a camera view and an orthogonal projection
         // matrix
-        Matrix.setLookAtM(mVMatrix, 0, 0f, 0f, 3.0f, 0f, 0f, 0f, 0f, 1.0f, 0.0f)
-        Matrix.orthoM(mProjMatrix,0,-1.0f,1.0f, -1.0f, 1.0f, 100.0f, -100.0f)
+        Matrix.setLookAtM(vMatrix, 0, 0f, 0f, 3.0f, 0f, 0f, 0f, 0f, 1.0f, 0.0f)
+        Matrix.orthoM(projMatrix,0,-1.0f,1.0f, -1.0f, 1.0f, 100.0f, -100.0f)
     }
     
     // Called for each redraw of the view.
@@ -87,18 +87,18 @@ class MyGLRenderer : GLSurfaceView.Renderer {
         // Redraw background color
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT)
         
-        GLES20.glUseProgram(mProgram!!)
-        val muMVPMatrixHandle = GLES20.glGetUniformLocation( mProgram!!, "uMVPMatrix");
-        Matrix.multiplyMM(mMVPMatrix, 0, mProjMatrix, 0, mVMatrix, 0)
+        GLES20.glUseProgram(program!!)
+        val muMVPMatrixHandle = GLES20.glGetUniformLocation( program!!, "uMVPMatrix");
+        Matrix.multiplyMM(mvpMatrix, 0, projMatrix, 0, vMatrix, 0)
         
         // Apply the combined projection and camera view
         // transformations
-        GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false, mMVPMatrix, 0);
+        GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false, mvpMatrix, 0);
         
-        triangle = triangle ?: Triangle(mProgram,vbo[0],ibo[0])
+        triangle = triangle ?: Triangle(program,vbo[0],ibo[0])
         triangle?.draw()
         
-        square = square ?: Square(mProgram,vbo[1],ibo[1])
+        square = square ?: Square(program,vbo[1],ibo[1])
         square?.draw()
     }
     

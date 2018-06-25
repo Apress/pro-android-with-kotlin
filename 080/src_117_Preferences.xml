@@ -2,9 +2,8 @@
 <PreferenceScreen xmlns:android=
       "http://schemas.android.com/apk/res/android">
   ...
-  <PreferenceScreen
-        android:title="Subscreen Title"
-        android:persistent="false">
+  <PreferenceCategory
+        android:title="Category Title">
       <SwitchPreference
           android:key="pref_key_switch"
           android:summary="A Switch"
@@ -15,5 +14,5 @@
           android:summary="A Ringtone"
           android:title="A Ringtone"
           />
-  </PreferenceScreen>
+  </PreferenceCategory>
   ...
