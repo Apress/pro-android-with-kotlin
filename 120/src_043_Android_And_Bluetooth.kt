@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     
+    
     /**
     * Launch the DeviceListActivity to see devices and
     * do scan

@@ -19,17 +19,8 @@ class PreviewDimension {
             append(Surface.ROTATION_270, 180);
         }
         
-        
         /**
-        * Given sizes supported by a camera, choose the
-        * smallest one that is at least as large as the
-        * respective texture view size, and that is at
-        * most as large as the respective max size, and
-        * whose aspect ratio matches with the specified
-        * value. If such size doesn't exist, choose the
-        * largest one that is at most as large as the
-        * respective max size, and whose aspect ratio
-        * matches with the specified value.
+        * Calculate the optimal size.
         *
         * @param choices           The list of sizes
         *     that the camera supports for the intended

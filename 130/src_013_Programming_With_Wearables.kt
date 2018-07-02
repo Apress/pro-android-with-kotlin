@@ -1,4 +1,5 @@
 class MyComplications {
+    
     companion object {
         fun getComplicationId( pos: ComplicationConfigActivity.ComplicationLocation): Int {
             // Add supported locations here

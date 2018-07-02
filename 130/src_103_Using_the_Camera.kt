@@ -57,12 +57,12 @@ class CameraSession(val handler: Handler, val cameraOpenCloseLock:Semaphore, val
         }
         
         override
-        fun onCaptureProgressed(session: CameraCaptureSession, request: CaptureRequest, partialResult: CaptureResult) {
+        fun onCaptureProgressed( session: CameraCaptureSession, request: CaptureRequest, partialResult: CaptureResult) {
             //...
         }
         
         override
-        fun onCaptureCompleted(session: CameraCaptureSession, request: CaptureRequest, result: TotalCaptureResult) {
+        fun onCaptureCompleted( session: CameraCaptureSession, request: CaptureRequest, result: TotalCaptureResult) {
             process(result)
         }
     }
@@ -312,9 +312,7 @@ class CameraSession(val handler: Handler, val cameraOpenCloseLock:Semaphore, val
     
     /**
     * Run the precapture sequence for capturing a still
-    * image. This method should be called when we get a
-    * response in [.captureCallback] from
-    * [.lockFocusThenTakePicture].
+    * image.
     */
     private fun runPrecaptureSequence() {
         try {

@@ -39,13 +39,8 @@ class MainActivity : AppCompatActivity() {
             addStillImageConsumer(::dataArrived)
         }
         
-        // When the screen is turned off and turned back
-        // on, the SurfaceTexture is already available,
-        // and "onSurfaceTextureAvailable" will not be
-        // called. In that case, we can open a camera
-        // and start preview from here (otherwise, we
-        // wait until the surface is ready in the
-        // SurfaceTextureListener).
+        // Correctly handle the screen turned off and
+        // turned back on.
         if (cameraTexture.isAvailable()) {
             camera.openCamera(cameraTexture.width, cameraTexture.height)
             configureTransform(cameraTexture.width, cameraTexture.height)

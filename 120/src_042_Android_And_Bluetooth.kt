@@ -36,9 +36,7 @@ class DeviceListActivity : Activity() {
     }
     
     /**
-    * The BroadcastReceiver that listens for discovered
-    * devices and changes the title when discovery is
-    * finished
+    * Listening for discovered devices.
     */
     private val mReceiver = object : BroadcastReceiver() {
         override

@@ -22,12 +22,9 @@
 */
 class CardService : HostApduService() {
     
+    
     /**
-    * Called if the connection to the NFC card is lost,
-    * in order to let the application know the
-    * cause for the disconnection (either a lost link,
-    * or another AID being selected by the reader).
-    *
+    * Called if the connection to the NFC card is lost.
     * @param reason Either DEACTIVATION_LINK_LOSS or
     *     DEACTIVATION_DESELECTED
     */
@@ -35,23 +32,7 @@ class CardService : HostApduService() {
     
     /**
     * This method will be called when a command APDU has
-    * been received from a remote device. A response
-    * APDU can be provided directly by returning a
-    * byte-array in this method. In general response
-    * APDUs must be sent as quickly as possible, given
-    * the fact that the user is likely holding his device
-    * over an NFC reader when this method is called.
-    *
-    * If there are multiple services that have registered
-    * for the same AIDs in their meta-data entry, you
-    * will only get called if the user has explicitly
-    * selected your service, either as a default or just
-    * for the next tap.
-    *
-    * This method is running on the main thread of your
-    * application. If you cannot return a response APDU
-    * immediately, return null and use the
-    * [.sendResponseApdu] method later.
+    * been received from a remote device.
     *
     * @param commandApdu The APDU that received from the
     *     remote device
@@ -77,6 +58,7 @@ class CardService : HostApduService() {
             return UNKNOWN_CMD_SW
         }
     }
+    
     
     companion object {
         private val TAG = "CardService"

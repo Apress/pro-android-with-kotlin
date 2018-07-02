@@ -79,10 +79,7 @@ class MyGLRenderer : GLSurfaceView.Renderer {
         Matrix.orthoM(projMatrix,0,-1.0f,1.0f, -1.0f, 1.0f, 100.0f, -100.0f)
     }
     
-    // Called for each redraw of the view.
-    // If renderMode = GLSurfaceView.RENDERMODE_WHEN_DIRTY
-    // (see MyGLSurfaceView)
-    // this will not be called every frame
+    
     override fun onDrawFrame(unused: GL10) {
         // Redraw background color
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT)

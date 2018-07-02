@@ -12,19 +12,13 @@ class ContactsWriter(val ctx:Context, val contentResolver: ContentResolver) {
     fun addContact(accountType:String, accountName:String, firstName:String, lastName:String, emailAddr:String, phone:String) {
         val firstOperationIndex = opList.size
         
-        // Creates a new raw contact. The "contacts"
-        // table will be filled automatically (access
-        // is not possible anyways)
-        // The device's user account and account type
-        // is needed, otherwise the operations silently
-        // will fail!
+        // Creates a new raw contact.
         var op = ContentProviderOperation.newInsert( ContactsContract.RawContacts.CONTENT_URI)
         .withValue( ContactsContract.RawContacts.ACCOUNT_TYPE, accountType)
         .withValue( ContactsContract.RawContacts.ACCOUNT_NAME, accountName)
         opList.add(op.build())
         
-        // Creates the display name for the new raw
-        // (a StructuredName data row)
+        // Creates the display name for the new row
         op = ContentProviderOperation.newInsert( ContactsContract.Data.CONTENT_URI)
         // withValueBackReference will make sure the
         // foreign key relations will be set
@@ -57,9 +51,8 @@ class ContactsWriter(val ctx:Context, val contentResolver: ContentResolver) {
         .withValue(ContactsContract.CommonDataKinds.Email.ADDRESS, emailAddr)
         .withValue(ContactsContract.CommonDataKinds.Email.TYPE, android.provider.ContactsContract.CommonDataKinds.Email.TYPE_HOME)
         
-        // Add a yield point. Has no functional influence,
-        // but introduces a break so the system can do
-        // other work to improve usability
+        
+        // Add a yield point.
         op.withYieldAllowed(true)
         
         opList.add(op.build())
